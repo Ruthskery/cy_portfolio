@@ -8,7 +8,7 @@ function Navbar() {
   return (
 <nav className="sticky top-0 z-50 bg-white dark:bg-gray-400 text-black dark:text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-          <div className={`${montserrat.className} text-4xl font-black`}>Cyril<span className='text-[#FF0266]'>.</span></div>
+          <div className={`${montserrat.className} text-4xl font-black`}>Roots<span className='text-[#FF0266]'>.</span></div>
         <div className="flex-1">
         </div>
 
