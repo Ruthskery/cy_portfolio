@@ -1,23 +1,39 @@
 'use client'
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaGithub } from "react-icons/fa";
 
-import aboutMe from '../public/images/aboutMe.jpg';
+import aboutMe from '../public/images/meLight.png';
+import aboutMeDark from '../public/images/meNight.png'
+import aboutMeHoverDark from '../public/images/ShymeLight.png'
+import aboutMeHover from '../public/images/ShymeNight.png'
 
 function About() {
+
+    const [isHovered, setIsHovered] = useState(false);
+
   return (
   <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-4 py-12">
     <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       
       {/* Left Column - Image */}
       <div className="flex justify-center md:justify-end">
+         <Image
+            src={isHovered ? aboutMeHoverDark : aboutMeDark}
+            alt="About Me"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] object-cover rounded-xl shadow-lg dark:hidden cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          />
         <Image
-          src={aboutMe}
-          alt="About Me"
-          className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] object-cover rounded-xl shadow-lg"
-        />
+            src={isHovered ? aboutMeHover : aboutMe}
+            alt="About Me"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] object-cover rounded-xl shadow-lg hidden dark:block cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          />
       </div>
+
 
       {/* Right Column - Content */}
       <div className="flex flex-col justify-center text-center md:text-left">
@@ -32,7 +48,7 @@ function About() {
 
         {/* Description */}
         <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-          I’m a fresh graduate of <span className="font-semibold">Bachelor of Science in Information Technology</span> and an aspiring <span className="font-semibold">Associate Full-Stack Developer</span>. Currently unemployed 😔 but actively seeking opportunities to kickstart my career.
+          I’m a fresh graduate of <span className="font-semibold">Bachelor of Science in Information Technology.</span> {/* aspiring Associate Full-Stack Developer but*/}  Actively seeking opportunities to kickstart my career.
         </p>
 
         {/* Skills / Interests in 3 Columns */}
@@ -79,7 +95,6 @@ function About() {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-amber-400 hover:text-cyan-500"
           >
             <FaGithub />
           </a>
