@@ -49,10 +49,10 @@ function Hero() {
             CYRIL IMPERIAL
           </h1>
 
-          <p
+          {/* <p
             className="text-8xl font-black text-gray-800 dark:text-gray-200 mt-2">
             Full-Stack Developer
-          </p>
+          </p> */}
         </div>
       </div>
   )
