@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from 'react'
 import Image from 'next/image';
-import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaGithub } from "react-icons/fa";
 
 import aboutMe from '../public/images/meLight.png';
 import aboutMeDark from '../public/images/meNight.png'
@@ -77,27 +77,34 @@ function About() {
           Hire me, please? 🙏
         </p>
         
-        {/* Social Media Icons */}
-        <div className="flex justify-center md:justify-start gap-5 text-gray-800 dark:text-gray-200 text-3xl sm:text-4xl mb-8">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-            <FaTiktok />
-          </a>
-          <a
-            href="https://github.com"
+        {/* Social Media + Download CV */}
+        <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-5 text-gray-800 dark:text-gray-200">
+          
+           {/* Download CV Button */}
+         <a
+            href="https://drive.google.com/file/d/1ux-YQX0Hk42eDIL6_uP9kgVLUrvdz0dg/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors duration-300"
           >
-            <FaGithub />
+            Download CV
           </a>
+
+          {/* Social Icons */}
+          <div className="flex gap-5 text-3xl sm:text-4xl">
+            <a href="https://www.facebook.com/Cyril.Christian.Imperial" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.instagram.com/ruthsimperial/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://www.tiktok.com/@codewithruths?lang=en" target="_blank" rel="noopener noreferrer">
+              <FaTiktok />
+            </a>
+            <a href="https://github.com/Ruthskery/" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+          </div>
         </div>
       </div>
     </div>  
