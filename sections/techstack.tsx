@@ -17,6 +17,7 @@ import {
   SiLaravel,
   SiDjango,
   SiDrizzle,
+  SiDocker
 } from "react-icons/si";
 
 function TechStack() {
@@ -39,6 +40,7 @@ function TechStack() {
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
     { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
     { name: "Django", icon: SiDjango, color: "text-green-700" },
+    { name: "Docker", icon: SiDocker, color: "text-blue-600"}
   ];
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 px-4 py-16">

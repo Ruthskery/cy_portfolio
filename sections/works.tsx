@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import prulydes from '../public/work/prulydes.png';
 import prolock from '../public/work/prolock.jpg';
-import attendancetracker from '../public/work/attendancetracker.png'
+import applicationtracker from '../public/work/attendancetracker.png'
 
 function Works() {
   return (
@@ -96,14 +96,14 @@ function Works() {
         >
           <div className="overflow-hidden">
             <Image
-              src={attendancetracker}
+              src={applicationtracker}
               alt="Attendance Tracker"
               className="w-full h-48 object-cover transform group-hover:scale-110 transition duration-300"
             />
           </div>
           <div className="p-6">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              Attendance Tracker
+              Application Tracker
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
               A CRUD web app to organize and monitor job applications efficiently.
