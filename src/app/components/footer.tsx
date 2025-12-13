@@ -22,7 +22,7 @@ function Footer() {
 
       {/* Footer Links */}
       <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
-        <span>Facebook © 2010</span>
+        <span>Facebook 2010</span>
         <span>·</span>
         <a className="text-[#385898] hover:underline cursor-pointer">Mobile</a>
         <span>·</span>
@@ -43,6 +43,10 @@ function Footer() {
         <a className="text-[#385898] hover:underline cursor-pointer">Terms</a>
         <span>·</span>
         <a className="text-[#385898] hover:underline cursor-pointer">Help</a>
+      </div>
+
+      <div className="mt-2">
+        <span className="text-gray-400">© 2025 Cyril Christian Imperial . All rights reserved.</span>
       </div>
 
     </footer>
