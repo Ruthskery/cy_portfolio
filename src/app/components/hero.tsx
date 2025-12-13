@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import RotatingText from '../components/RotatingText';
+import RotatingText from '../../../components/RotatingText';
 
 
 function Hero() {

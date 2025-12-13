@@ -2,9 +2,9 @@
 import React from 'react'
 import Image from 'next/image';
 
-import prulydes from '../public/work/prulydes.png';
-import prolock from '../public/work/prolock.jpg';
-import applicationtracker from '../public/work/attendancetracker.png'
+import prulydes from '../../../public/work/prulydes.png';
+import prolock from '../../../public/work/prolock.jpg';
+import applicationtracker from '../../../public/work/attendancetracker.png'
 
 function Works() {
   return (

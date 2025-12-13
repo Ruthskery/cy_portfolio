@@ -1,22 +1,19 @@
 'use client'
 import React from 'react';
 import { ThemeProvider } from '../../context/ThemeContext';
-import Navbar from '../../components/navbar';
-import About from '../../sections/about';
-import Experience from '../../sections/experience';
-import Works from '../../sections/works';
-import Hero from '../../sections/hero';
-import TechStack from '../../sections/techstack';
+import Navbar from './components/navbar';
+import Layout from './Layout/layout';
+import Chatbot from './components/AIChat/Chatbot';
+import Footer from './components/footer';
 
 function App() {
   return (
     <ThemeProvider>
       <Navbar />
-      <Hero />
-      <About />
-      <TechStack />
-      <Experience />
-      <Works />
+      <Layout />
+      <Footer />
+
+      <Chatbot />
     </ThemeProvider>
   );
 }
