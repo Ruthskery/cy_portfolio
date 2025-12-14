@@ -63,18 +63,18 @@ const FacebookMessage2010: React.FC = () => {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="fixed bottom-4 right-4 bg-[#3b5998] text-white px-4 py-2 text-sm font-bold 
-          border border-gray-400 shadow-md flex items-center gap-2 w-80 justify-start"
+          className="fixed bottom-4 right-2 sm:right-4 bg-[#3b5998] text-white px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold 
+          border border-gray-400 shadow-md flex items-center gap-2 w-auto sm:w-80 justify-start"
         >
           <UserRound className="w-4 h-4" />
           <span className="w-2 h-2 bg-green-500 rounded-full border border-white" />
-          <span>Chat</span>
+          <span className="hidden sm:inline">Chat</span>
         </button>
       )}
 
       {/* CHAT WINDOW */}
       {open && (
-        <div className="fixed bottom-0 right-0 md:right-4 w-80 border border-gray-400 bg-white text-sm shadow-md">
+        <div className="fixed bottom-0 right-0 left-0 sm:left-auto sm:right-4 sm:w-80 w-full border border-gray-400 bg-white text-sm shadow-md max-h-[80vh] sm:max-h-none">
           {/* HEADER */}
           <div className="flex items-center justify-between bg-[#3b5998] text-white px-2 py-1">
             <div className="flex items-center gap-2">
@@ -97,7 +97,7 @@ const FacebookMessage2010: React.FC = () => {
           </div>
 
           {/* MESSAGES */}
-          <div className="h-56 overflow-y-auto px-2 py-2 space-y-2">
+          <div className="h-48 sm:h-56 overflow-y-auto px-2 py-2 space-y-2">
             {messages.map((m, idx) => (
               <div
                 key={idx}

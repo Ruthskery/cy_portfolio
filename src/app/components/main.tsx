@@ -11,13 +11,13 @@ function Main() {
   return (
     <div>
       {/* Header */}
-      <ul className="flex items-center w-full">
+      <ul className="flex flex-col sm:flex-row items-start sm:items-center w-full gap-2 sm:gap-0">
         <li className="flex items-center gap-2">
-          <Newspaper className="w-5 h-5" />
-          <span className="text-2xl font-bold">About</span>
+          <Newspaper className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span className="text-xl sm:text-2xl font-bold">About</span>
         </li>
 
-        <li className="ml-auto flex gap-2">
+        <li className="ml-auto flex gap-2 text-sm sm:text-base">
           <span>Top News</span>
           <span className="text-gray-400">•</span>
           <span>Most Recent</span>
@@ -25,12 +25,12 @@ function Main() {
       </ul>
 
       {/* Post Input */}
-      <div className="mt-4 max-w-4xl">
-        <div className="flex items-center bg-white border border-black rounded-md px-5 py-1 shadow-inner">
+      <div className="mt-4 max-w-4xl w-full">
+        <div className="flex items-center bg-white border border-black rounded-md px-3 sm:px-5 py-1 shadow-inner">
           <input
             type="text"
             placeholder="What's on your mind?"
-            className="bg-transparent outline-none w-full"
+            className="bg-transparent outline-none w-full text-sm sm:text-base"
           />
         </div>
       </div>

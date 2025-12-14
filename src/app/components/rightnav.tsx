@@ -3,18 +3,18 @@ import Image from "next/image";
 
 function RightNav() {
   return (
-    <div className="flex flex-col gap-4 text-sm">
+    <div className="flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm">
 
       {/* SKILLS */}
-      <div className="border border-gray-300 bg-gray-50 p-3">
-        <div className="flex justify-between font-bold text-gray-700">
+      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
+        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
           <p>Skills</p>
           <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
         </div>
 
         <hr className="my-2 border-gray-300" />
 
-        <ul className="grid grid-cols-2 gap-x-6 gap-y-1 text-gray-700">
+        <ul className="grid grid-cols-2 gap-x-3 sm:gap-x-6 gap-y-1 text-gray-700 text-xs sm:text-sm">
           <li className="cursor-pointer hover:underline">C#</li>
           <li className="cursor-pointer hover:underline">Python</li>
           <li className="cursor-pointer hover:underline">TypeScript</li>
@@ -48,8 +48,8 @@ function RightNav() {
       </div>
 
       {/* ORGANIZATIONS */}
-      <div className="border border-gray-300 bg-gray-50 p-3">
-        <div className="flex justify-between font-bold text-gray-700">
+      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
+        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
           <p>Organizations</p>
           <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
         </div>
@@ -62,11 +62,11 @@ function RightNav() {
             alt="BICOL IT ORG"
             width={40}
             height={40}
-            className="rounded"
+            className="rounded w-8 h-8 sm:w-10 sm:h-10"
           />
 
           <div>
-            <p className="font-semibold text-gray-800">
+            <p className="font-semibold text-gray-800 text-xs sm:text-sm">
               Bicol IT Organization
             </p>
             <p className="text-xs text-gray-500">
@@ -82,11 +82,11 @@ function RightNav() {
             alt="CCS ORG"
             width={40}
             height={40}
-            className="rounded"
+            className="rounded w-8 h-8 sm:w-10 sm:h-10"
           />
 
           <div>
-            <p className="font-semibold text-xs text-gray-800">
+            <p className="font-semibold text-xs sm:text-sm text-gray-800">
               College of Computer Studies - Student Council
             </p>
             <p className="text-xs text-gray-500">
@@ -100,15 +100,15 @@ function RightNav() {
       </div>
 
       {/* EVENTS */}
-      <div className="border border-gray-300 bg-gray-50 p-3">
-        <div className="flex justify-between font-bold text-gray-700">
+      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
+        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
           <p>Events Attended</p>
           <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
         </div>
 
         <hr className="my-2 border-gray-300" />
 
-        <ul className="space-y-1">
+        <ul className="space-y-1 text-xs sm:text-sm">
           <li className="cursor-pointer hover:underline">Ship or Be Shipped 2025</li>
           <li className="cursor-pointer hover:underline">Caffeine AI Manila</li>
           <li className="cursor-pointer hover:underline">Called to Create</li>
@@ -122,14 +122,14 @@ function RightNav() {
       </div>
 
       {/* CONNECT */}
-      <div className="border border-gray-300 bg-gray-50 p-3">
-        <div className="font-bold text-gray-700">
+      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
+        <div className="font-bold text-gray-700 text-xs sm:text-sm">
           Get Connected
         </div>
 
         <hr className="my-2 border-gray-300" />
 
-        <ul className="space-y-1">
+        <ul className="space-y-1 text-xs sm:text-sm">
           <li>
             <a
               href="https://github.com/Ruthskery"

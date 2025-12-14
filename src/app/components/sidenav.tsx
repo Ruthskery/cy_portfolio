@@ -12,7 +12,7 @@ function Sidenav() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <nav className="w-full max-w-[220px]">
+    <nav className="w-full max-w-[220px] mx-auto md:mx-0">
 
       {/* ================= PROFILE ================= */}
       <div className="flex items-center gap-3 mb-4 px-2">

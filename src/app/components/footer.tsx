@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="m-10 text-xs text-[#737373] text-center">
+    <footer className="m-4 sm:m-6 md:m-10 text-xs text-[#737373] text-center px-2 sm:px-4">
 
       {/* Languages */}
       <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">

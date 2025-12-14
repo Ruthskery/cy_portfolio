@@ -7,16 +7,16 @@ import Image from 'next/image';
 
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#3a599b]  text-white p-2 shadow-md">
-      <div className="container mx-auto flex justify-center items-center gap-5">
+    <nav className="sticky top-0 z-50 bg-[#3a599b] text-white p-2 shadow-md">
+      <div className="container mx-auto flex flex-wrap justify-between items-center gap-2 sm:gap-3 md:gap-5 px-2 sm:px-4">
         
         {/* Left: Logo */}
-        <div className={`${montserrat.className} text-3xl font-black `}>
+        <div className={`${montserrat.className} text-xl sm:text-2xl md:text-3xl font-black`}>
           Roots
         </div>
 
-        {/* Icons */}
-        <div className="flex items-center gap-2 pt-3">
+        {/* Icons - Hidden on very small screens */}
+        <div className="hidden sm:flex items-center gap-2 pt-3">
             <Image
               src="/nav/userNav.png"
               alt="Navigation User"
@@ -37,33 +37,35 @@ function Navbar() {
             />
         </div>
 
-        {/* Search Bar */}
-        <div className='pr-80'>
-          <div className="flex items-center bg-white  rounded-md px-3 py-1 shadow-inner gap-30">
+        {/* Search Bar - Responsive width */}
+        <div className='flex-1 min-w-0 max-w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:pr-80'>
+          <div className="flex items-center bg-white rounded-md px-2 sm:px-3 py-1 shadow-inner">
             <input
               type="text"
               placeholder="Search"
-              className="bg-transparent outline-none text-black  placeholder-gray-500 "
+              className="bg-transparent outline-none text-black placeholder-gray-500 text-sm sm:text-base w-full min-w-0"
             />
-            <Search className="w-5 h-5 text-gray-600 " />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 flex-shrink-0" />
           </div>
         </div>
 
-        <div className="flex items-center gap-5">
+        {/* Navigation Links - Hidden on small screens, shown on medium+ */}
+        <div className="hidden md:flex items-center gap-3 lg:gap-5">
           {["Home", "Profile", "Account"].map((text, index) => (
             <Link
               key={index}
               href="/"
               className={`
                 ${montserrat.className}
-                text-sm font-medium
+                text-xs sm:text-sm font-medium
                 flex items-center gap-1
+                whitespace-nowrap
               `}
             >
               {text}
 
               {text === "Account" && (
-                <ChevronDown className="w-4 h-4 mt-[1px]" />
+                <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 mt-[1px]" />
               )}
             </Link>
           ))}
