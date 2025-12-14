@@ -45,7 +45,7 @@ function Post4 ({ showComments = false }) {
                 </p>
 
                 <p className="text-black font-light dark:text-gray-300 text-sm sm:text-base">
-                    I'm always open to collaborating on exciting projects in AI, full-stack development, prompt engineering, and innovative web solutions.                
+                    I&apos;m always open to collaborating on exciting projects in AI, full-stack development, prompt engineering, and innovative web solutions.                
                 </p>
             </div>
 

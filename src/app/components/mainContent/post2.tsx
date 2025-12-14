@@ -47,7 +47,7 @@ function Post2 ({ showComments = false }) {
                 </p>
 
                 <p className="text-black font-light dark:text-gray-300 text-sm sm:text-base">
-                Currently, I work as a Software Testing Engineer at CSI Interfusion, where I ensure software quality, reliability, and performance while collaborating closely with development teams. I'm also adept in Azure DevOps, using it for test management, CI/CD pipelines, version control, and collaborative workflows that support high-quality software delivery.
+                Currently, I work as a Software Testing Engineer at CSI Interfusion, where I ensure software quality, reliability, and performance while collaborating closely with development teams. I&apos;m also adept in Azure DevOps, using it for test management, CI/CD pipelines, version control, and collaborative workflows that support high-quality software delivery.
                 </p>
 
                 <Image

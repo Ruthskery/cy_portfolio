@@ -45,7 +45,7 @@ function Post({ showComments = false }) {
                 </p>
 
                 <p className="text-black font-light dark:text-gray-300 text-sm sm:text-base">
-                I'm an aspiring Full-Stack Developer and AI Engineer, driven by a passion
+                I&apos;m an aspiring Full-Stack Developer and AI Engineer, driven by a passion
                 for building scalable, intelligent, and data-driven web applications that
                 solve real-world problems.
                 </p>

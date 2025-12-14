@@ -44,7 +44,7 @@ function Post3 ({ showComments = false }) {
                 </p>
 
                 <p className="text-black font-light dark:text-gray-300 text-sm sm:text-base">
-                    My long-term goal is to grow as a Full-Stack and AI Engineer, contributing to innovative products that push the boundaries of technology. I'm continuously learning, experimenting, and refining my skills to stay aligned with the rapidly evolving tech landscape.                
+                    My long-term goal is to grow as a Full-Stack and AI Engineer, contributing to innovative products that push the boundaries of technology. I&apos;m continuously learning, experimenting, and refining my skills to stay aligned with the rapidly evolving tech landscape.                
                 </p>
             </div>
 
