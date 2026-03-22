@@ -19,7 +19,7 @@ function FeedPost({ date, mood, children, images = [], comments }: FeedPostProps
 
   return (
     <article className="mt-3 w-full max-w-5xl border border-[var(--feed-card-border)] bg-[var(--feed-card)] p-3">
-      <div className="grid grid-cols-[68px_1fr] gap-3">
+      <div className="grid grid-cols-[68px_1fr] gap-x-3 gap-y-1">
         <FeedPostHeader
           mood={mood}
           isHovered={isHovered}
@@ -27,7 +27,7 @@ function FeedPost({ date, mood, children, images = [], comments }: FeedPostProps
           onMouseLeave={() => setIsHovered(false)}
         />
 
-        <div className="col-start-2 min-w-0">
+        <div className="col-start-2 row-start-2 min-w-0">
           <div className="space-y-3 text-[15px] leading-[1.55] text-[var(--feed-text)]">
             {children}
           </div>

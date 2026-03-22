@@ -21,7 +21,7 @@ function FeedPostHeader({
 }: FeedPostHeaderProps) {
   return (
     <>
-      <div className="pt-0.5">
+      <div className="row-span-2 pt-0.5">
         <Image
           src={isHovered ? aboutMeHoverDark : aboutMeDark}
           alt="Profile picture"
@@ -33,13 +33,13 @@ function FeedPostHeader({
         />
       </div>
 
-      <div className="min-w-0">
-        <header className="mb-2 flex flex-wrap items-baseline gap-x-1 gap-y-0.5 text-[14px] leading-5">
+      <div className="min-w-0 pt-0.5">
+        <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5 text-[14px] leading-5">
           <span className="font-bold text-[var(--feed-accent)]">
             Cyril Christian Imperial
           </span>
           {mood ? <span className="text-[13px] text-[var(--feed-muted)]">{mood}</span> : null}
-        </header>
+        </div>
       </div>
     </>
   )
