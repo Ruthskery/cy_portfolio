@@ -3,8 +3,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f2f2;
+  --foreground: #1d2129;
+  --feed-card: #ffffff;
+  --feed-card-strong: #f7f7f7;
+  --feed-card-border: #d4dae8;
+  --feed-muted: #777777;
+  --feed-text: #1d2129;
+  --feed-accent: #3b5998;
+  --feed-accent-strong: #2d4373;
+  --feed-shell: #f6f7f8;
+  --feed-border-dark: #bfc7d8;
 }
 
 @theme inline {
@@ -14,15 +23,29 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: none;
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+a,
+button,
+input {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }

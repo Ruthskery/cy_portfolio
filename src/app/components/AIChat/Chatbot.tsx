@@ -91,6 +91,7 @@ const FacebookMessage2010: React.FC = () => {
             <button
               onClick={() => setOpen(false)}
               className="text-xs font-bold"
+              aria-label="Close chat"
             >
               ✕
             </button>

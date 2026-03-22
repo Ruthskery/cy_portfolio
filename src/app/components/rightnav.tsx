@@ -1,203 +1,123 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
+
+const skills = ['Python', 'TypeScript', 'Next.js', 'Node.js', 'Docker']
+
+const organizations = [
+  {
+    name: 'Bicol IT Organization',
+    image: '/organization/bitcolit.jpg',
+    supporters: '150 friends are fans',
+    action: 'Join Organization',
+    alt: 'Bicol IT Organization',
+  },
+  {
+    name: 'CCS Student Council',
+    image: '/organization/ccs.jpg',
+    supporters: '211 friends are fans',
+    action: 'Follow Organization',
+    alt: 'CCS Student Council',
+  },
+]
+
+const events = [
+  'Ship or Be Shipped 2025',
+  'Caffeine AI Manila',
+  'Called to Create',
+  'Cursor Meetup Philippines',
+]
+
+const links = [
+  { label: 'Invite friends to join Facebook.', href: 'https://www.facebook.com/' },
+  { label: 'Find people you know who are already using Facebook.', href: 'https://www.linkedin.com/in/cyril-imperial/' },
+]
+
+function Card({
+  title,
+  action,
+  children,
+}: {
+  title: string
+  action?: string
+  children: React.ReactNode
+}) {
+  return (
+    <section className="border-b border-[#d8dfea] pb-2">
+      <div className="flex justify-between text-[11px] font-bold text-[#333]">
+        <p>{title}</p>
+        {action ? (
+          <p className="cursor-pointer text-[#3b5998] hover:underline">{action}</p>
+        ) : null}
+      </div>
+      <div className="mt-2">{children}</div>
+    </section>
+  )
+}
 
 function RightNav() {
   return (
-    <div className="flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm">
-
-      {/* SKILLS */}
-      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
-        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
-          <p>Skills</p>
-          <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
-        </div>
-
-        <hr className="my-2 border-gray-300" />
-
-        <ul className="grid grid-cols-2 gap-x-3 sm:gap-x-6 gap-y-1 text-gray-700 text-xs sm:text-sm">
-          <li className="cursor-pointer hover:underline">C#</li>
-          <li className="cursor-pointer hover:underline">Python</li>
-          <li className="cursor-pointer hover:underline">TypeScript</li>
-          <li className="cursor-pointer hover:underline">JavaScript</li>
-
-          <li className="cursor-pointer hover:underline">Next.js</li>
-          <li className="cursor-pointer hover:underline">FastAPI</li>
-          <li className="cursor-pointer hover:underline">Laravel</li>
-          <li className="cursor-pointer hover:underline">Express</li>
-          <li className="cursor-pointer hover:underline">ORM</li>
-
-          <li className="cursor-pointer hover:underline">Node.js</li>
-
-          <li className="cursor-pointer hover:underline">SQL</li>
-          <li className="cursor-pointer hover:underline">MySQL</li>
-
-          <li className="cursor-pointer hover:underline">GitHub Actions</li>
-          <li className="cursor-pointer hover:underline">Docker</li>
-          <li className="cursor-pointer hover:underline">VPS Deployment</li>
-
-          <li className="cursor-pointer hover:underline">VS Code</li>
-          <li className="cursor-pointer hover:underline">Postman</li>
-          <li className="cursor-pointer hover:underline">Git</li>
-          <li className="cursor-pointer hover:underline">GitHub</li>
-
-          <li className="cursor-pointer hover:underline">Linux</li>
-          <li className="cursor-pointer hover:underline">Ubuntu</li>
-          <li className="cursor-pointer hover:underline">Agile & Scrum</li>
-          <li className="cursor-pointer hover:underline">SDLC</li>
+    <div className="flex flex-col gap-3 text-[11px]">
+      <Card title="Requests" action="View all">
+        <ul className="space-y-1 text-[#3b5998]">
+          {skills.map((skill) => (
+            <li key={skill} className="cursor-pointer hover:underline">
+              {skill}
+            </li>
+          ))}
         </ul>
-      </div>
+      </Card>
 
-      {/* ORGANIZATIONS */}
-      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
-        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
-          <p>Organizations</p>
-          <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
+      <Card title="Suggestions" action="View all">
+        <div className="grid gap-2">
+          {organizations.map((organization) => (
+            <div key={organization.name} className="grid grid-cols-[40px_1fr] gap-2">
+              <Image
+                src={organization.image}
+                alt={organization.alt}
+                width={40}
+                height={40}
+                className="h-10 w-10 border border-[#d8dfea] object-cover"
+              />
+              <div>
+                <p className="font-bold text-[#3b5998]">{organization.name}</p>
+                <p className="text-[10px] text-[#777]">{organization.supporters}</p>
+                <p className="cursor-pointer text-[10px] text-[#3b5998] hover:underline">
+                  {organization.action}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
+      </Card>
 
-        <hr className="my-2 border-gray-300" />
-
-        <div className="grid grid-cols-[auto_1fr] gap-2">
-          <Image
-            src='/organization/bitcolit.jpg'
-            alt="BICOL IT ORG"
-            width={40}
-            height={40}
-            className="rounded w-8 h-8 sm:w-10 sm:h-10"
-          />
-
-          <div>
-            <p className="font-semibold text-gray-800 text-xs sm:text-sm">
-              Bicol IT Organization
-            </p>
-            <p className="text-xs text-gray-500">
-              150 friends are fans
-            </p>
-            <p className="text-blue-600 cursor-pointer hover:underline text-xs">
-              Join Organization
-            </p>
-          </div>
-
-          <Image
-            src='/organization/ccs.jpg'
-            alt="CCS ORG"
-            width={40}
-            height={40}
-            className="rounded w-8 h-8 sm:w-10 sm:h-10"
-          />
-
-          <div>
-            <p className="font-semibold text-xs sm:text-sm text-gray-800">
-              College of Computer Studies - Student Council
-            </p>
-            <p className="text-xs text-gray-500">
-              211 friends are fans
-            </p>
-            <p className="text-blue-600 cursor-pointer hover:underline text-xs">
-              Follow Organization
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* EVENTS */}
-      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
-        <div className="flex justify-between font-bold text-gray-700 text-xs sm:text-sm">
-          <p>Events Attended</p>
-          <p className="text-blue-600 cursor-pointer hover:underline">View All</p>
-        </div>
-
-        <hr className="my-2 border-gray-300" />
-
-        <ul className="space-y-1 text-xs sm:text-sm">
-          <li className="cursor-pointer hover:underline">Ship or Be Shipped 2025</li>
-          <li className="cursor-pointer hover:underline">Caffeine AI Manila</li>
-          <li className="cursor-pointer hover:underline">Called to Create</li>
-          <li className="cursor-pointer hover:underline">Cursor Meetup Philippines</li>
-          <li className="cursor-pointer hover:underline">Crypto Vision Conference 2025</li>
-          <li className="cursor-pointer hover:underline">Base Batches: Global Buildathon</li>
-          <li className="cursor-pointer hover:underline">Bicol Blockchain Conference 2024</li>
-          <li className="cursor-pointer hover:underline">Bicol IT Conference 2024</li>
-          <li className="cursor-pointer hover:underline">Bicol Co-Hack 2025</li>
+      <Card title="Events" action="View all">
+        <ul className="space-y-1 text-[#3b5998]">
+          {events.map((event) => (
+            <li key={event} className="cursor-pointer hover:underline">
+              {event}
+            </li>
+          ))}
         </ul>
-      </div>
+      </Card>
 
-      {/* CONNECT */}
-      <div className="border border-gray-300 bg-gray-50 p-2 sm:p-3">
-        <div className="font-bold text-gray-700 text-xs sm:text-sm">
-          Get Connected
-        </div>
-
-        <hr className="my-2 border-gray-300" />
-
-        <ul className="space-y-1 text-xs sm:text-sm">
-          <li>
-            <a
-              href="https://github.com/Ruthskery"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect GitHub
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.linkedin.com/in/cyril-imperial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect LinkedIn
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.facebook.com/Cyril.Christian.Imperial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect Facebook
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.instagram.com/ruthsimperial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect Instagram
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.tiktok.com/@codewithruths"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect Tiktok
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://x.com/ITprutss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 cursor-pointer hover:underline"
-            >
-              Connect X
-            </a>
-          </li>
+      <Card title="Connect with friends">
+        <ul className="space-y-1">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-[#3b5998] hover:underline"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
-      </div>
-
+      </Card>
     </div>
-  );
+  )
 }
 
-export default RightNav;
+export default RightNav

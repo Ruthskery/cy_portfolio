@@ -1,80 +1,65 @@
-import React from 'react';
-import Link from 'next/link';
-// import ToggleSwitch from '../../../components/toggleSwitch';
-import { montserrat } from '../../../styles/font';
-import { Search, ChevronDown  } from 'lucide-react';
-import Image from 'next/image';
+import React from 'react'
+import Link from 'next/link'
+import { montserrat } from '../../../styles/font'
+import { Search, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+
+const navIcons = [
+  { src: '/nav/userNav.png', alt: 'Navigation User' },
+  { src: '/nav/messageNav.png', alt: 'Messages' },
+  { src: '/nav/globeNav.png', alt: 'Globe' },
+]
+
+const navLinks = ['Home', 'Profile', 'Account']
 
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#3a599b] text-white p-2 shadow-md">
-      <div className="container mx-auto flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-center sm:justify-center items-center gap-2 sm:gap-3 md:gap-5 px-2 sm:px-4">
-        
-        {/* Left: Logo */}
-        <div className={`${montserrat.className} text-xl sm:text-2xl md:text-3xl font-black`}>
-          Roots
+    <nav className="sticky top-0 z-50 border-b border-[#133783] bg-[#3b5998] text-white">
+      <div className="mx-auto flex h-11 w-full max-w-[1220px] items-center gap-3 px-3">
+        <div
+          className={`${montserrat.className} text-[23px] font-black leading-none tracking-[-0.05em]`}
+        >
+          facebook
         </div>
 
-        {/* Icons - Hidden on very small screens */}
-        <div className="hidden sm:flex items-center gap-2 pt-3">
+        <div className="hidden items-center gap-1 sm:flex">
+          {navIcons.map((icon) => (
             <Image
-              src="/nav/userNav.png"
-              alt="Navigation User"
-              width={20}
-              height={20}
+              key={icon.src}
+              src={icon.src}
+              alt={icon.alt}
+              width={16}
+              height={16}
             />
-            <Image
-              src="/nav/messageNav.png"
-              alt="Messages"
-              width={20}
-              height={20}
-            />
-            <Image
-              src="/nav/globeNav.png"
-              alt="Globe"
-              width={20}
-              height={20}
-            />
-        </div>
-
-        {/* Search Bar - Original desktop design with pr-80, responsive on mobile */}
-        <div className='w-full sm:w-auto sm:pr-80'>
-          <div className="flex items-center bg-white rounded-md px-2 sm:px-3 py-1 shadow-inner gap-30">
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-transparent outline-none text-black placeholder-gray-500 text-sm sm:text-base w-full"
-            />
-            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 flex-shrink-0" />
-          </div>
-        </div>
-
-        {/* Navigation Links - Hidden on small screens, shown on medium+ */}
-        <div className="hidden md:flex items-center gap-5">
-          {["Home", "Profile", "Account"].map((text, index) => (
-            <Link
-              key={index}
-              href="/"
-              className={`
-                ${montserrat.className}
-                text-sm font-medium
-                flex items-center gap-1
-              `}
-            >
-              {text}
-
-              {text === "Account" && (
-                <ChevronDown className="w-4 h-4 mt-[1px]" />
-              )}
-            </Link>
           ))}
         </div>
 
-        {/* Toggle Switch */}
-        {/* <ToggleSwitch /> */}
+        <div className="ml-2 hidden w-[320px] md:block">
+          <div className="flex items-center border border-[#29447e] bg-white px-2 py-[2px]">
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-full bg-transparent text-[11px] text-black outline-none placeholder:text-[#90949c]"
+            />
+            <Search className="h-3 w-3 flex-shrink-0 text-[#90949c]" />
+          </div>
+        </div>
+
+        <div className="ml-auto hidden items-center gap-4 md:flex">
+          {navLinks.map((text) => (
+            <Link
+              key={text}
+              href="/"
+              className="flex items-center gap-1 text-[11px] font-bold text-white hover:underline"
+            >
+              {text}
+              {text === 'Account' ? <ChevronDown className="mt-[1px] h-3 w-3" /> : null}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

@@ -1,56 +1,63 @@
-import React from "react";
+import React from 'react'
+
+const languages = [
+  'English (US)',
+  'Espanol',
+  'Portugues (Brasil)',
+  'Francais (France)',
+  'Deutsch',
+  'Italiano',
+  'Arabic',
+  'Chinese (Simplified)',
+]
+
+const footerLinks = [
+  'Mobile',
+  'Find Friends',
+  'Badges',
+  'Careers',
+  'About',
+  'Advertising',
+  'Developers',
+  'Privacy',
+  'Terms',
+  'Help',
+]
 
 function Footer() {
   return (
-    <footer className="m-4 sm:m-6 md:m-10 text-xs text-[#737373] text-center px-2 sm:px-4">
-
-      {/* Languages */}
+    <footer className="m-4 px-2 text-center text-xs text-[#737373] sm:m-6 sm:px-4 md:m-10">
       <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
-        <a className="text-[#385898] hover:underline cursor-pointer">English (US)</a>
-        <a className="hover:underline cursor-pointer">Español</a>
-        <a className="hover:underline cursor-pointer">Português (Brasil)</a>
-        <a className="hover:underline cursor-pointer">Français (France)</a>
-        <a className="hover:underline cursor-pointer">Deutsch</a>
-        <a className="hover:underline cursor-pointer">Italiano</a>
-        <a className="hover:underline cursor-pointer">العربية</a>
-        <a className="hover:underline cursor-pointer">中文(简体)</a>
-        <span>›</span>
+        {languages.map((language, index) => (
+          <a
+            key={language}
+            className={index === 0 ? 'cursor-pointer text-[#385898] hover:underline' : 'cursor-pointer hover:underline'}
+          >
+            {language}
+          </a>
+        ))}
+        <span>{'>'}</span>
       </div>
 
-      {/* Divider */}
-      <hr className="my-2 border-gray-300 max-w-4xl mx-auto" />
+      <hr className="mx-auto my-2 max-w-4xl border-gray-300" />
 
-      {/* Footer Links */}
       <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
         <span>Facebook 2010</span>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Mobile</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Find Friends</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Badges</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Careers</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">About</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Advertising</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Developers</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Privacy</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Terms</a>
-        <span>·</span>
-        <a className="text-[#385898] hover:underline cursor-pointer">Help</a>
+        {footerLinks.map((link) => (
+          <React.Fragment key={link}>
+            <span>&middot;</span>
+            <a className="cursor-pointer text-[#385898] hover:underline">{link}</a>
+          </React.Fragment>
+        ))}
       </div>
 
       <div className="mt-2">
-        <span className="text-gray-400">© 2025 Cyril Christian Imperial . All rights reserved.</span>
+        <span className="text-gray-400">
+          Copyright 2025 Cyril Christian Imperial. All rights reserved.
+        </span>
       </div>
-
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
