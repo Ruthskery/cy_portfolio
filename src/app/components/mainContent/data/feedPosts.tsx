@@ -1,4 +1,3 @@
-import React from 'react'
 import type { FeedPostItem } from '../feed/types'
 
 import CSI from '../../../../../public/posts/CSI.png'
