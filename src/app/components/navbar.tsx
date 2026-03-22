@@ -19,7 +19,7 @@ function Navbar() {
         <div
           className={`${montserrat.className} text-[23px] font-black leading-none tracking-[-0.05em]`}
         >
-          facebook
+          Roots
         </div>
 
         <div className="hidden items-center gap-1 sm:flex">
