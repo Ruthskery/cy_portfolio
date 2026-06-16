@@ -1,15 +1,17 @@
-import { Montserrat, Roboto } from 'next/font/google';
+import { Bricolage_Grotesque, Space_Grotesk } from 'next/font/google';
 
-export const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+// Display — the hero name, panel headings, the wordmark. Big and tight.
+export const bricolage = Bricolage_Grotesque({
+  weight: ['600', '700', '800'],
   subsets: ['latin'],
-  style: ['normal', 'italic'],
-  variable: '--font-montserrat',
+  variable: '--font-display',
+  display: 'swap',
 });
 
-export const roboto = Roboto({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+// Body, UI and labels — calm, slightly technical, very legible.
+export const spaceGrotesk = Space_Grotesk({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  style: ['normal', 'italic'],
-  variable: '--font-roboto',
+  variable: '--font-body',
+  display: 'swap',
 });
