@@ -1,39 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# cy_portfolio
 
-## Getting Started
+Cyril Imperial's personal portfolio — a [Next.js](https://nextjs.org) (App Router) site
+featuring a chibi "designer-toy" 3D hero and an AI "ask me" assistant backed by a
+retrieval-augmented (RAG) service.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 15** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS v4**
+- **three.js** — 3D hero figure (`ChibiStage`), loaded from an OBJ/MTL model
+- **motion** — UI animation
+- **axios** — calls to the AI backend
+- **openai** / **lucide-react** / **react-icons** — supporting libraries
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+public/models/          OBJ + MTL assets for the 3D hero (required at runtime)
+src/app/                App Router entry, pages, and layout
+src/app/api/askMe.tsx   Client wrapper for the AI "ask me" backend
+src/app/components/hero/ Hero UI: ChibiStage (3D) and OmenChat (AI chat)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## AI "ask me" assistant
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The chat in the hero (`OmenChat`) calls `askMe()` in
+[`src/app/api/askMe.tsx`](src/app/api/askMe.tsx), which POSTs to the
+RAG backend (the `omen_portfolio` FastAPI service) and reads the `answer` field of
+the response. The backend contract is documented in
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## Deploy on Vercel
+## Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# cy_portfolio
-Personal Portfolio
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the 3D hero and the AI backend
+  integration work, and the gotchas around each.
