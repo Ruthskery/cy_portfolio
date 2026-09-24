@@ -1,0 +1,48 @@
+# Materials for cyril-stylized-portrait.obj
+newmtl skin
+Ka 0.89 0.58 0.39
+Kd 0.91 0.62 0.43
+Ks 0.18 0.12 0.08
+Ns 28
+
+newmtl skin_shadow
+Ka 0.74 0.43 0.31
+Kd 0.78 0.48 0.34
+Ks 0.10 0.07 0.05
+Ns 18
+
+newmtl hair_black
+Ka 0.01 0.01 0.012
+Kd 0.015 0.014 0.016
+Ks 0.16 0.15 0.14
+Ns 70
+
+newmtl jacket_black
+Ka 0.008 0.008 0.010
+Kd 0.012 0.012 0.016
+Ks 0.08 0.08 0.09
+Ns 35
+
+newmtl shirt_white
+Ka 0.80 0.82 0.88
+Kd 0.88 0.90 0.96
+Ks 0.22 0.23 0.25
+Ns 45
+
+newmtl pocket_gray
+Ka 0.34 0.36 0.36
+Kd 0.42 0.44 0.44
+Ks 0.16 0.16 0.16
+Ns 25
+
+newmtl eye_dark
+Ka 0.02 0.014 0.010
+Kd 0.035 0.024 0.018
+Ks 0.38 0.34 0.30
+Ns 95
+
+newmtl lip_warm
+Ka 0.55 0.24 0.20
+Kd 0.68 0.31 0.25
+Ks 0.20 0.10 0.08
+Ns 35
